@@ -6,18 +6,26 @@ export const GifGridItem = ( { id, title, url } ) => {
 
     return (
 
-        <div className='card animate__animated animate__backInLeft'>
+        <div className='p-2 align-self-center'>
 
-            <a onClick = { () => { window.open(url, '_blank'); } }>
+            <div className='card p-2 animate__animated animate__backInLeft'>
 
                 <img 
                     src = { url } 
+                    className = 'card-img-top'
                     alt = { id }
-                />
- 
-            </a>            
-            <p>{ title }</p>
-            
+                />          
+                <div>
+
+                    <h5 className = 'card-title'> { title } </h5>
+                    <a 
+                        className = 'btn btn-secondary'
+                        onClick = { () => { window.open(url, '_blank'); } } >Go gif</a>
+
+                </div>
+
+            </div>
+
         </div>
 
     )

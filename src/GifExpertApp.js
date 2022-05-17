@@ -4,36 +4,38 @@ import GifGrid from './components/GifGrid';
 
 const GifExpertApp = () => {
 
-    // const categories = [ 'One Punch', 'Marvel', 'Halo' ];
-
     const [categories, setCategories] = useState( [ 'Halo' ] );
 
-    // const handleApp = () => {
-    //     setcategories( [ ...categories, 'add' ] );
-    // }
+    return (
 
-  return (
+        <div className='container-fluid'>
 
-    <>
-        <h1>GifExpertApp</h1>
-        <AddCategory setCategories = { setCategories } />
-        <hr></hr>
+            <div className='row justify-content-md-center'>
 
-        <ol>
-            { 
+                <div className='col-md-auto'>
 
-                categories.map( category => 
-                    <GifGrid 
-                        key = { category }
-                        category = { category } 
-                    />
-                )
+                    <h1>GifExpertApp</h1>
 
-            }
-        </ol>
-    </>
+                </div>
 
-  );
+                <AddCategory setCategories = { setCategories } />
+
+                <div className='row justify-content-start'>
+                    {
+                        categories.map( category => 
+                            <GifGrid 
+                                key = { category }
+                                category = { category } 
+                            />
+                        )
+                    }
+                </div>
+
+            </div>            
+
+        </div>
+
+    );
 
 }
 

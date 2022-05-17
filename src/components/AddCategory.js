@@ -26,14 +26,27 @@ export const AddCategory = ( { setCategories } ) => {
 
     return (
 
-        <form onSubmit = { handleSubmit }>
-            <input 
-                type = 'text'
-                value = { inputValue }
-                onChange = { handleInputChange }
-                placeholder = 'Ingrese la categoría a buscar'
-            />                
-        </form>
+        <div className='container-fluid'>
+
+            <form onSubmit = { handleSubmit }>
+
+                <div className = "form-floating mb-3">
+
+                    <input 
+                        type = "text"
+                        className = "form-control" 
+                        id = "floatingInput" 
+                        placeholder = "Input the category"
+                        value = { inputValue }
+                        onChange = { handleInputChange }
+                    />
+                    <label htmlFor = "floatingInput">Category</label>
+
+                </div>    
+
+            </form>
+
+        </div>       
 
     );
     
